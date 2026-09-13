@@ -1,0 +1,14 @@
+C:\Users\kylej\OneDrive\Documents\_BYU\BYU_Sep_2026\.NET - CSE325\cse325_repo\week01\Debug\bin\Debug\net10.0\Debug.exe
+C:\Users\kylej\OneDrive\Documents\_BYU\BYU_Sep_2026\.NET - CSE325\cse325_repo\week01\Debug\bin\Debug\net10.0\Debug.deps.json
+C:\Users\kylej\OneDrive\Documents\_BYU\BYU_Sep_2026\.NET - CSE325\cse325_repo\week01\Debug\bin\Debug\net10.0\Debug.runtimeconfig.json
+C:\Users\kylej\OneDrive\Documents\_BYU\BYU_Sep_2026\.NET - CSE325\cse325_repo\week01\Debug\bin\Debug\net10.0\Debug.dll
+C:\Users\kylej\OneDrive\Documents\_BYU\BYU_Sep_2026\.NET - CSE325\cse325_repo\week01\Debug\bin\Debug\net10.0\Debug.pdb
+C:\Users\kylej\OneDrive\Documents\_BYU\BYU_Sep_2026\.NET - CSE325\cse325_repo\week01\Debug\obj\Debug\net10.0\Debug.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kylej\OneDrive\Documents\_BYU\BYU_Sep_2026\.NET - CSE325\cse325_repo\week01\Debug\obj\Debug\net10.0\Debug.AssemblyInfoInputs.cache
+C:\Users\kylej\OneDrive\Documents\_BYU\BYU_Sep_2026\.NET - CSE325\cse325_repo\week01\Debug\obj\Debug\net10.0\Debug.AssemblyInfo.cs
+C:\Users\kylej\OneDrive\Documents\_BYU\BYU_Sep_2026\.NET - CSE325\cse325_repo\week01\Debug\obj\Debug\net10.0\Debug.csproj.CoreCompileInputs.cache
+C:\Users\kylej\OneDrive\Documents\_BYU\BYU_Sep_2026\.NET - CSE325\cse325_repo\week01\Debug\obj\Debug\net10.0\Debug.dll
+C:\Users\kylej\OneDrive\Documents\_BYU\BYU_Sep_2026\.NET - CSE325\cse325_repo\week01\Debug\obj\Debug\net10.0\refint\Debug.dll
+C:\Users\kylej\OneDrive\Documents\_BYU\BYU_Sep_2026\.NET - CSE325\cse325_repo\week01\Debug\obj\Debug\net10.0\Debug.pdb
+C:\Users\kylej\OneDrive\Documents\_BYU\BYU_Sep_2026\.NET - CSE325\cse325_repo\week01\Debug\obj\Debug\net10.0\Debug.genruntimeconfig.cache
+C:\Users\kylej\OneDrive\Documents\_BYU\BYU_Sep_2026\.NET - CSE325\cse325_repo\week01\Debug\obj\Debug\net10.0\ref\Debug.dll

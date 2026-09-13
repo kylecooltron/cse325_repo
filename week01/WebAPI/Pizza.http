@@ -1,0 +1,55 @@
+@HostAddress = http://localhost:5250
+
+
+GET {{HostAddress}}/pizza/
+Accept: application/json
+
+###
+
+
+GET {{HostAddress}}/pizza/1
+Accept: application/json
+
+###
+
+
+GET {{HostAddress}}/pizza/5
+Accept: application/json
+
+###
+
+
+
+
+POST {{HostAddress}}/pizza/
+Content-Type: application/json
+
+{
+    "name": "Hawaii",
+    "isGlutenFree": false
+}
+
+###
+
+
+PUT {{HostAddress}}/pizza/3
+Content-Type: application/json
+
+{
+    "id": 3,
+    "name": "Hawaiian",
+    "isGlutenFree": false
+}
+
+###
+
+
+GET {{HostAddress}}/pizza/3
+Accept: application/json
+
+###
+
+
+DELETE {{HostAddress}}/pizza/3
+
+###

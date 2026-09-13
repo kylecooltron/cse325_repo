@@ -1,0 +1,177 @@
+
+week01/FileSystem/mslearn-dotnet-files/salesTotalDir/totals.txt READS
+Sales Summary
+----------------------------
+ Total Sales: $2,012.20
+
+ Details:
+   stores\sales.json: $88.88
+   stores\201\sales.json: $501.22
+   stores\202\sales.json: $1,234.22
+   stores\203\sales.json: $99.00
+   stores\204\sales.json: $88.88
+
+
+
+
+C:\Users\kylej\OneDrive\Documents\_BYU\BYU_Sep_2026\.NET - CSE325\cse325_repo\week01\WebAPI\Pizza.http
+// Evidence: All the Pizza.http requests work as expected
+// See that file
+
+// Hardcoded new record exists in the PizzaService.cs
+// See that file
+// Ex:  new Pizza { Id = 4, Name = "Caprese", IsGlutenFree = false }
+
+
+
+
+
+// Here's some verbose evidence for the Pizza.http so I don't get docked points: - - - - - - - - - - - - - -
+GET {{HostAddress}}/pizza/  get all
+Accept: application/json
+RESPONSE:
+HTTP/1.1 200 OK
+Connection: close
+Content-Type: application/json; charset=utf-8
+Date: Sun, 13 Sep 2026 23:30:49 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+[
+  {
+    "id": 1,
+    "name": "Classic Italian",
+    "isGlutenFree": false
+  },
+  {
+    "id": 2,
+    "name": "Veggie",
+    "isGlutenFree": true
+  }
+]
+
+
+GET {{HostAddress}}/pizza/1 get by id
+Accept: application/json
+RESPONSE:
+HTTP/1.1 200 OK
+Connection: close
+Content-Type: application/json; charset=utf-8
+Date: Sun, 13 Sep 2026 23:31:31 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+{
+  "id": 1,
+  "name": "Classic Italian",
+  "isGlutenFree": false
+}
+
+
+GET {{HostAddress}}/pizza/5 get not exists
+Accept: application/json
+HTTP/1.1 404 Not Found
+Connection: close
+Content-Type: application/problem+json; charset=utf-8
+Date: Sun, 13 Sep 2026 23:32:04 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+{
+  "type": "https://tools.ietf.org/html/rfc9110#section-15.5.5",
+  "title": "Not Found",
+  "status": 404,
+  "traceId": "00-afd87e4745ee3c9a80801112383e24a9-9d890495b97873c3-00"
+}
+
+
+POST {{HostAddress}}/pizza/  create new
+Content-Type: application/json
+
+{
+    "name": "Hawaii",
+    "isGlutenFree": false
+}
+HTTP/1.1 201 Created
+Connection: close
+Content-Type: application/json; charset=utf-8
+Date: Sun, 13 Sep 2026 23:32:11 GMT
+Server: Kestrel
+Location: http://localhost:5250/Pizza/4
+Transfer-Encoding: chunked
+
+{
+  "id": 3,
+  "name": "Hawaii",
+  "isGlutenFree": false
+}
+
+
+PUT {{HostAddress}}/pizza/3 update
+Content-Type: application/json
+
+{
+    "id": 3,
+    "name": "Hawaiian",
+    "isGlutenFree": false
+}
+HTTP/1.1 204 No Content
+Connection: close
+Date: Sun, 13 Sep 2026 23:34:26 GMT
+Server: Kestrel
+
+
+GET {{HostAddress}}/pizza/3 check update
+Accept: application/json
+HTTP/1.1 200 OK
+Connection: close
+Content-Type: application/json; charset=utf-8
+Date: Sun, 13 Sep 2026 23:34:44 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+{
+  "id": 3,
+  "name": "Hawaiian",
+  "isGlutenFree": false
+}
+
+
+DELETE {{HostAddress}}/pizza/3 delete
+HTTP/1.1 204 No Content
+Connection: close
+Date: Sun, 13 Sep 2026 23:34:54 GMT
+Server: Kestrel
+
+
+
+GET {{HostAddress}}/pizza/3 check delete
+Accept: application/json
+HTTP/1.1 404 Not Found
+Connection: close
+Content-Type: application/problem+json; charset=utf-8
+Date: Sun, 13 Sep 2026 23:35:09 GMT
+Server: Kestrel
+Transfer-Encoding: chunked
+
+{
+  "type": "https://tools.ietf.org/html/rfc9110#section-15.5.5",
+  "title": "Not Found",
+  "status": 404,
+  "traceId": "00-f9716f1e79d2890d8c622195daad001f-bb5d1ae49ea324a0-00"
+}
+
+
+
+
+
+
+
+
+// My personal study notes - - - - - - -
+http://localhost:5250
+dotnet tool install -g Microsoft.dotnet-httprepl
+httprepl https://localhost:{PORT}
+connect https://localhost:{PORT}
+
+
