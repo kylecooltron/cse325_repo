@@ -1,0 +1,13 @@
+Design and build one additional feature to support the functionality of the application. Ideas include:
+Display a list of moves made during the current game.
+Keep track of consecutive wins for each player.
+Allow the user to select the color of the game pieces.
+Customize the styling of the game adding accessibility
+
+Upload your application to a new repository.
+Record a video of your running application where you demonstrate/explain with your own voice the additional functionality that you added to the connect four game.
+Submit the vide URL in Canvas.
+
+
+https://learn.microsoft.com/en-us/training/modules/dotnet-connect-four/3-exercise-blazor
+

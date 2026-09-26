@@ -1,0 +1,2 @@
+Just finished this one:
+https://learn.microsoft.com/en-us/training/modules/dotnet-connect-four/5-exercise-game-logic
