@@ -1,17 +1,6 @@
 ﻿@inject GameState State
 @using System.Drawing
 
-<HeadContent>
-    <style>
-        :root {
-            --board-bg: @ColorTranslator.ToHtml(BoardColor);
-            --player1: @ColorTranslator.ToHtml(Player1Color);
-            --player2: @ColorTranslator.ToHtml(Player2Color);
-        }
-    </style>
-</HeadContent>
-
-
 <nav>
     @for (byte i = 0; i < 7; i++)
     {
@@ -27,7 +16,7 @@
     <span class="alert-info">@CurrentTurn</span>
 </article>
 
-<div>
+<div style="--board-bg: @ColorTranslator.ToHtml(BoardColor); --player1: @ColorTranslator.ToHtml(Player1Color); --player2: @ColorTranslator.ToHtml(Player2Color);">
    <div class="board">
       @for (var i = 0; i < 42; i++)
       {
@@ -42,16 +31,64 @@
    }
 </div>
 
+<div>
+    <div>
+        <label>Board Color: </label>
+        @foreach (var (name, color) in BoardColors)
+        {
+            var c = color;
+            <button style="background-color: @ColorTranslator.ToHtml(c); width: 30px; height: 30px;"
+                    @onclick="() => BoardColor = c"></button>
+        }
+    </div>
+    <div>
+        <label>Player 1 Color: </label>
+        @foreach (var (name, color) in Player1Colors)
+        {
+            var c = color;
+            <button style="background-color: @ColorTranslator.ToHtml(c); width: 30px; height: 30px;"
+                    @onclick="() => Player1Color = c"></button>
+        }
+    </div>
+    <div>
+        <label>Player 2 Color: </label>
+        @foreach (var (name, color) in Player2Colors)
+        {
+            var c = color;
+            <button style="background-color: @ColorTranslator.ToHtml(c); width: 30px; height: 30px;"
+                    @onclick="() => Player2Color = c"></button>
+        }
+    </div>
+</div>
 
 @code {
-   [Parameter]
-   public Color BoardColor { get; set; } = ColorTranslator.FromHtml("yellow");
+   public Color BoardColor { get; set; } = Color.Black;
+   public Color Player1Color { get; set; } = Color.Green;
+   public Color Player2Color { get; set; } = Color.Purple;
 
-   [Parameter]
-   public Color Player1Color { get; set; } = ColorTranslator.FromHtml("red");
+   private static readonly List<(string Name, Color Color)> BoardColors = new()
+   {
+       ("Black",      Color.Black),
+       ("Navy",       Color.FromArgb(0, 0, 128)),
+       ("Dark Green", Color.FromArgb(0, 100, 0)),
+       ("Dark Gray",  Color.FromArgb(64, 64, 64)),
+   };
 
-   [Parameter]
-   public Color Player2Color { get; set; } = ColorTranslator.FromHtml("blue");
+   private static readonly List<(string Name, Color Color)> Player1Colors = new()
+   {
+       ("Red",    Color.Red),
+       ("Yellow", Color.Yellow),
+       ("Light Purple", Color.FromArgb(180, 130, 255)),
+       ("Orange", Color.Orange),
+   };
+
+   private static readonly List<(string Name, Color Color)> Player2Colors = new()
+   {
+       ("Pink",       Color.HotPink),
+       ("Teal",       Color.Teal),
+       ("Lime",       Color.FromArgb(0, 255, 128)),
+       ("Light Blue", Color.FromArgb(0, 200, 255)),
+   };
 
    private string[] pieces = new string[42];
    private string winnerMessage = string.Empty;
